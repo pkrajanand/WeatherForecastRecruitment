@@ -30,16 +30,16 @@ Architectural Overview
 
 The application follows three-tire architecture:
 
-* client side: including html pages and javascript files
-* web tier: Restful controllers
-* service tier: CityLoading Service and WeatherForeCasting service
+* client side: HTML page and AngularJS-based JavaScript file
+* web tier: Restful controllers to collaborate between views and services
+* service tier: Spring annotated services for loading the covered cities and for fetching the weather data for the selected city
 
 Current implementation make use of a free service provided by Open Weather Map(http://openweathermap.org) for weather updates. But this could easily be replaced with another
 implementation since the respective services are designed in a loosely coupled fashion.
 
-Unit tests covers critical code regions.
+Unit tests covers the core code regions.
 
-Spring boot is used for quick turn around and to avail of an embedded tomcat deployment.
+Spring-Boot is used for quick turn around and to avail of an embedded Tomcat deployment.
 
 ------------------------------------
 Design Diagrams
