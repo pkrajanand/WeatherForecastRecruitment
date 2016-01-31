@@ -29,8 +29,16 @@ public class CoveredCityLoaderService implements CoverageAvailableCitiesService 
     @Value("${weather.cities}")
     private String cityListConfig;
 
-
     /**
+     * Returns the configured city names
+     * 
+     * @return
+     */
+    public String getCityListConfig() {
+		return cityListConfig;
+	}
+
+	/**
      * Set configured city list. Although this is auto injected generally.
      * This method is still useful on unit testing.
      * @param cityListConfig

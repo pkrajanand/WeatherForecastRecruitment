@@ -3,7 +3,9 @@
  */
 package org.pactera.weatherforecast.service.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
@@ -15,6 +17,8 @@ import org.junit.Test;
  */
 public class CoveredCityLoaderServiceTest {
 
+	private CoveredCityLoaderService coveredCityLoaderService = new CoveredCityLoaderService();
+	
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -34,7 +38,12 @@ public class CoveredCityLoaderServiceTest {
 	 */
 	@Test
 	public final void testGetCoveredCities() {
-		fail("Not yet implemented");
+		coveredCityLoaderService.setCityListConfig("Sydney,Melbourne");
+		
+		List<String> coveredCities = coveredCityLoaderService.getCoveredCities();
+		assertTrue(coveredCities.get(0).equals("Sydney"));
+		assertTrue(coveredCities.get(1).equals("Melbourne"));
+
 	}
 
 }

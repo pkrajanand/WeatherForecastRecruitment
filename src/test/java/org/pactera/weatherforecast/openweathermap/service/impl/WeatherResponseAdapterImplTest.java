@@ -3,18 +3,28 @@
  */
 package org.pactera.weatherforecast.openweathermap.service.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.pactera.weatherforecast.model.WeatherResponse;
+import org.pactera.weatherforecast.openweathermap.model.WeatherResponseContainerModel;
+import org.pactera.weatherforecast.openweathermap.model.WeatherResponseMainPartModel;
+import org.pactera.weatherforecast.openweathermap.model.WeatherResponseWeatherPartModel;
+import org.pactera.weatherforecast.openweathermap.model.WeatherResponseWindPartModel;
 
 /**
  * @author rajanandpk
  *
  */
 public class WeatherResponseAdapterImplTest {
-
+	
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -34,7 +44,46 @@ public class WeatherResponseAdapterImplTest {
 	 */
 	@Test
 	public final void testGetWeatherResponse() {
-		fail("Not yet implemented");
+		WeatherResponseContainerModel weatherResponseContainerModel = createWeatherResponseContainerModel();
+		WeatherResponseAdapterImpl weatherResponseAdapterImpl = 
+				new WeatherResponseAdapterImpl(weatherResponseContainerModel, "metric");
+		
+		WeatherResponse weatherResponse = 
+				weatherResponseAdapterImpl.getWeatherResponse();
+		
+		assertTrue("Speed set is not returned", new BigDecimal(12.0).equals(weatherResponse.getWind().getSpeed()));
+		assertTrue("Speed set is not returned", new BigDecimal(12.0).equals(weatherResponse.getTemperature().getDegree()));
+
+		assertSame("City set is not returned", "Sydney", weatherResponse.getCity());
+		assertSame("Weather set is not returned", "Clouds ready", weatherResponse.getWeather());
+		
+	}
+
+	/**
+	 * Creating a test model
+	 */
+	private WeatherResponseContainerModel createWeatherResponseContainerModel() {
+		WeatherResponseContainerModel weatherResponseContainerModel = 
+				new WeatherResponseContainerModel ();
+		
+		WeatherResponseMainPartModel main = new WeatherResponseMainPartModel();
+		main.setTemp(new BigDecimal(12.0));
+		weatherResponseContainerModel.setMain(main);
+		weatherResponseContainerModel.setName("Sydney");
+		
+		List<WeatherResponseWeatherPartModel> weather = 
+				new ArrayList<WeatherResponseWeatherPartModel>();
+		WeatherResponseWeatherPartModel weatherResponseWeatherPartModel =
+				new WeatherResponseWeatherPartModel ();
+		weatherResponseWeatherPartModel.setDescription("Clouds ready");
+		weather.add(weatherResponseWeatherPartModel);
+		weatherResponseContainerModel.setWeather(weather);
+		
+		WeatherResponseWindPartModel wind = new WeatherResponseWindPartModel ();
+		wind.setSpeed(new BigDecimal(12.0));
+		weatherResponseContainerModel.setWind(wind);
+		
+		return weatherResponseContainerModel;
 	}
 
 }

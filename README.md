@@ -44,13 +44,13 @@ Spring boot is used for quick turn around and to avail of an embedded tomcat dep
 ------------------------------------
 Design Diagrams
 ------------------------------------
-
+TO-DO
 
 ------------------------------------
 To build and run the tests
 ------------------------------------
 ```
-mvn clean test
+mvn clean compile test
 ```
 ------------------------------------
 To run this application:
@@ -62,4 +62,4 @@ mvn spring-boot:run
 -------------------------
 Configuration Options
 -------------------------
-More cities could be added by specifying it as a comma separated value for the property "weather.cities" in application.properties. This requries a restart of the server.
+More cities could be added by specifying it as a comma separated value for the property "weather.cities" in application.properties. This requires a restart of the server.

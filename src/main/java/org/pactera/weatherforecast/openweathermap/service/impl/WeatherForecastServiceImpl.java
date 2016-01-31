@@ -29,6 +29,10 @@ public class WeatherForecastServiceImpl implements WeatherForecastService {
         this.config = config;
     }
 
+    public WeatherProviderConfiguration getConfig() {
+        return this.config;
+    }
+    
     /**
      * Retrieve weather info from Weather Map API.
      */
