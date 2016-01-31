@@ -6,9 +6,6 @@ import java.util.List;
 
 import org.pactera.weatherforecast.service.CoverageAvailableCitiesService;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.core.convert.ConversionService;
-import org.springframework.core.convert.support.DefaultConversionService;
 import org.springframework.stereotype.Service;
 
 /**

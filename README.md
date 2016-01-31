@@ -44,7 +44,12 @@ Spring boot is used for quick turn around and to avail of an embedded tomcat dep
 ------------------------------------
 Design Diagrams
 ------------------------------------
-TO-DO
+Activity Diagrams - For User and System
+![Image of Activity Diagram](ActivityDiagramFromUserAndSystem.jpg)
+
+Class Diagram - Around Service Classes
+![Image of Class Diagram](ClassDiagramsAroundServiceClasses.jpg)
+
 
 ------------------------------------
 To build and run the tests
@@ -58,6 +63,10 @@ To run this application:
 ```
 mvn spring-boot:run
 ```
+------------------------------------
+To access the application:
+------------------------------------
+http://localhost:8080/
 
 -------------------------
 Configuration Options
