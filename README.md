@@ -52,7 +52,7 @@ Class Diagram - Around Service Classes
 
 
 ------------------------------------
-To build and run the tests
+To run the tests
 ------------------------------------
 ```
 mvn clean compile test
@@ -67,6 +67,11 @@ mvn spring-boot:run
 To access the application:
 ------------------------------------
 http://localhost:8080/
+
+------------------------------------
+To Build WAR :
+------------------------------------
+mvn package
 
 -------------------------
 Configuration Options
