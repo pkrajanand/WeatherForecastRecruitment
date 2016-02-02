@@ -4,25 +4,27 @@ This is a weather forecast reporting application for selected cities. More citie
 ------------------------------------
 Architecture Stack
 ------------------------------------
-Front end: HTML, AngularJS, CSS, 
-Back end: Spring Boot 1.3.2, Spring MVC 4,
-Unit test: JUnit 4, Mockito
-Build Tool : Maven
+* UI-Tier: HTML, AngularJS, CSS
+* Middle Tier: Spring Boot 1.3.2, Spring MVC 4, JDK 8
+* Test Automation: JUnit 4, Mockito
+* Build Tool : Maven
+* Deployment : Spring-Boot embedded Tomcat
+* SCM : GitHub
 
 ---------------------------------
 Development Environment
 ------------------------------------
-Mac OSX 10.11.3
-STS 3.7.2
-JDK 8
+* Mac OSX 10.11.3
+* STS 3.7.2
+* JDK 8
+* Visual Paradigm Community Edition UML Tool
 
 ------------------------------------
 System Requirement:
 ------------------------------------
-JDK 1.8+  
-MAVEN 3.3.9
-Application tested on Mac OSX 10.11.3  
-
+* JDK 1.8+  
+* MAVEN 3.3.9
+* Application tested on Mac OSX 10.11.3  
 
 ------------------------------------
 Architectural Overview
