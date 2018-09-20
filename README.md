@@ -49,10 +49,10 @@ Spring-Boot is used for quick turn around and to avail of an embedded Tomcat dep
 Design Diagrams
 ------------------------------------
 Activity Diagrams - For User and System
-![Image of Activity Diagram](ActivityDiagramFromUserAndSystem.jpg)
+![Image of Activity Diagram](doc/ActivityDiagramFromUserAndSystem.jpg)
 
 Class Diagram - Around Service Classes
-![Image of Class Diagram](ClassDiagramsAroundServiceClasses.jpg)
+![Image of Class Diagram](doc/ClassDiagramsAroundServiceClasses.jpg)
 
 
 ------------------------------------
