@@ -1,4 +1,4 @@
-# Weather Forecast Reporting Application (WeFoRA)
+# Weather Forecaster (WeFor)
 This is a weather forecast reporting application for selected cities. More cities could be added in a configurable way.
 
 This was a project done as needed by employment recruitment process in 2016. However, it was a good opportunity to pick up Spring Boot.
