@@ -6,8 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Weather Forecaster (WeFor) built using Spring-Boot
  * 
- * @author rajanandpk
- *
  */
 @SpringBootApplication
 public class WeatherForecaster {
