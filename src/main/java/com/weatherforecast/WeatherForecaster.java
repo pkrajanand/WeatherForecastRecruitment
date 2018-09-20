@@ -4,15 +4,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Weather Forecast Reporting Application (WeFoRA) built using Spring-Boot
+ * Weather Forecaster (WeFor) built using Spring-Boot
  * 
  * @author rajanandpk
  *
  */
 @SpringBootApplication
-public class WeatherForecastApplication {
+public class WeatherForecaster {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WeatherForecastApplication.class, args);
+		SpringApplication.run(WeatherForecaster.class, args);
 	}
 }
