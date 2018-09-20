@@ -19,7 +19,7 @@ import com.weatherforecast.model.Temperature.HeatScale;
 import com.weatherforecast.model.Wind.SpeedScale;
 
 /**
- * @author rajanandpk
+ 
  *
  */
 public class WeatherResponseTest {
@@ -43,20 +43,20 @@ public class WeatherResponseTest {
 	 */
 	@Test
 	public final void testWeatherResponse() {
-		Temperature temperature = new Temperature (BigDecimal.valueOf(2.0), HeatScale.C);
+		Temperature temperature = new Temperature(BigDecimal.valueOf(2.0), HeatScale.C);
 		Wind wind = new Wind(BigDecimal.valueOf(12.0), SpeedScale.KMH);
-		
+
 		Date theDate = new Date();
-		WeatherResponse weatherResponse = new WeatherResponse
-				("Sydney", theDate, "Cloudy", temperature, wind);
-		
+		WeatherResponse weatherResponse = new WeatherResponse("Sydney", theDate, "Cloudy", temperature, wind);
+
 		assertTrue("Speed set is not returned", BigDecimal.valueOf(12.0).equals(weatherResponse.getWind().getSpeed()));
-		assertTrue("Speed set is not returned", BigDecimal.valueOf(2.0).equals(weatherResponse.getTemperature().getDegree()));
+		assertTrue("Speed set is not returned",
+				BigDecimal.valueOf(2.0).equals(weatherResponse.getTemperature().getDegree()));
 
 		assertSame("City set is not returned", "Sydney", weatherResponse.getCity());
 		assertSame("Updated Time set is not returned", theDate, weatherResponse.getUpdatedTime());
 		assertSame("Weather set is not returned", "Cloudy", weatherResponse.getWeather());
-		
+
 	}
 
 }

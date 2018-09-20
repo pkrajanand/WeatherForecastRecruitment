@@ -15,59 +15,60 @@ import com.weatherforecast.service.WeatherProviderConfiguration;
 @Service
 public class WeatherForecastServiceImpl implements WeatherForecastService {
 
-    private static final String PARAM_APPID = "APPID";
-    private static final String PARAM_UNITS = "units";
-    private static final String PARAM_Q = "q";
+	private static final String PARAM_APPID = "APPID";
+	private static final String PARAM_UNITS = "units";
+	private static final String PARAM_Q = "q";
 
-    @Autowired
-    private WeatherProviderConfiguration config;
+	@Autowired
+	private WeatherProviderConfiguration config;
 
-    /**
-     * Set the {@link WeatherProviderConfiguration} for this service.
-     * @param config
-     */
-    public void setConfig(WeatherProviderConfiguration config) {
-        this.config = config;
-    }
+	/**
+	 * Set the {@link WeatherProviderConfiguration} for this service.
+	 * 
+	 * @param config
+	 */
+	public void setConfig(WeatherProviderConfiguration config) {
+		this.config = config;
+	}
 
-    public WeatherProviderConfiguration getConfig() {
-        return this.config;
-    }
-    
-    /**
-     * Retrieve weather info from Weather Map API.
-     */
-    @Override
-    public WeatherResponse getWeatherResponse(String city) {
-        if (config == null) {
-            throw new IllegalArgumentException("Config must be provided");
-        }
-        URI composeUri = composeUri(city);
-		final WeatherResponseContainerModel weatherResult = getRestTemplate().getForObject(
-                composeUri, WeatherResponseContainerModel.class);
-        final WeatherResponseAdapterImpl adapter = new WeatherResponseAdapterImpl(weatherResult, config.getUnit());
-        return adapter.getWeatherResponse();
-    }
+	public WeatherProviderConfiguration getConfig() {
+		return this.config;
+	}
 
-    /**
-     * Returns a new RestTemplate Object. 
-     * @return a newly created {@link RestTemplate}.
-     */
-    RestTemplate getRestTemplate() {
-        return new RestTemplate();
-    }
+	/**
+	 * Retrieve weather info from Weather Map API.
+	 */
+	@Override
+	public WeatherResponse getWeatherResponse(String city) {
+		if (config == null) {
+			throw new IllegalArgumentException("Config must be provided");
+		}
+		URI composeUri = composeUri(city);
+		final WeatherResponseContainerModel weatherResult = getRestTemplate().getForObject(composeUri,
+				WeatherResponseContainerModel.class);
+		final WeatherResponseAdapterImpl adapter = new WeatherResponseAdapterImpl(weatherResult, config.getUnit());
+		return adapter.getWeatherResponse();
+	}
 
-    /**
-     * Compose Uri with query parameters.
-     * @param city
-     * @return composed URI with query parameters.
-     */
-    private URI composeUri(String city) {
-        final UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(config.getUrl())
-                .queryParam(PARAM_Q, city)
-                .queryParam(PARAM_UNITS, config.getUnit())
-                .queryParam(PARAM_APPID, config.getAppId());
-        return builder.build().toUri();
-    }
+	/**
+	 * Returns a new RestTemplate Object.
+	 * 
+	 * @return a newly created {@link RestTemplate}.
+	 */
+	RestTemplate getRestTemplate() {
+		return new RestTemplate();
+	}
+
+	/**
+	 * Compose Uri with query parameters.
+	 * 
+	 * @param city
+	 * @return composed URI with query parameters.
+	 */
+	private URI composeUri(String city) {
+		final UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(config.getUrl()).queryParam(PARAM_Q, city)
+				.queryParam(PARAM_UNITS, config.getUnit()).queryParam(PARAM_APPID, config.getAppId());
+		return builder.build().toUri();
+	}
 
 }

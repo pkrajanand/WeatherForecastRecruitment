@@ -20,7 +20,7 @@ import com.weatherforecast.openweathermap.model.WeatherResponseWeatherPartModel;
 import com.weatherforecast.openweathermap.model.WeatherResponseWindPartModel;
 
 /**
- * @author rajanandpk
+ 
  *
  */
 public class WeatherResponseContainerModelTest {
@@ -40,36 +40,36 @@ public class WeatherResponseContainerModelTest {
 	}
 
 	/**
-	 * Test method for {@link com.weatherforecast.openweathermap.model.WeatherResponseContainerModel#getMain()}.
+	 * Test method for
+	 * {@link com.weatherforecast.openweathermap.model.WeatherResponseContainerModel#getMain()}.
 	 */
 	@Test
 	public final void testGetWeatherResponseContainerModel() {
-		WeatherResponseContainerModel weatherResponseContainerModel = 
-				new WeatherResponseContainerModel ();
-		
+		WeatherResponseContainerModel weatherResponseContainerModel = new WeatherResponseContainerModel();
+
 		WeatherResponseMainPartModel main = new WeatherResponseMainPartModel();
 		main.setTemp(new BigDecimal(12.0));
 		weatherResponseContainerModel.setMain(main);
 		weatherResponseContainerModel.setName("Sydney");
-		
-		List<WeatherResponseWeatherPartModel> weather = 
-				new ArrayList<WeatherResponseWeatherPartModel>();
-		WeatherResponseWeatherPartModel weatherResponseWeatherPartModel =
-				new WeatherResponseWeatherPartModel ();
+
+		List<WeatherResponseWeatherPartModel> weather = new ArrayList<WeatherResponseWeatherPartModel>();
+		WeatherResponseWeatherPartModel weatherResponseWeatherPartModel = new WeatherResponseWeatherPartModel();
 		weatherResponseWeatherPartModel.setDescription("Clouds ready");
 		weather.add(weatherResponseWeatherPartModel);
 		weatherResponseContainerModel.setWeather(weather);
-		
-		WeatherResponseWindPartModel wind = new WeatherResponseWindPartModel ();
+
+		WeatherResponseWindPartModel wind = new WeatherResponseWindPartModel();
 		wind.setSpeed(new BigDecimal(12.0));
 		weatherResponseContainerModel.setWind(wind);
-		
-		assertTrue("Speed set is not returned", new BigDecimal(12.0).equals(weatherResponseContainerModel.getWind().getSpeed()));
-		
+
+		assertTrue("Speed set is not returned",
+				new BigDecimal(12.0).equals(weatherResponseContainerModel.getWind().getSpeed()));
+
 		assertSame("City set is not returned", "Sydney", weatherResponseContainerModel.getName());
 		assertSame("Weather info set is not returned", "Clouds ready", weatherResponseContainerModel.getWeather());
-		assertTrue("Temp set is not returned", new BigDecimal(12.0).equals(weatherResponseContainerModel.getMain().getTemp()));
-		
+		assertTrue("Temp set is not returned",
+				new BigDecimal(12.0).equals(weatherResponseContainerModel.getMain().getTemp()));
+
 	}
 
 }

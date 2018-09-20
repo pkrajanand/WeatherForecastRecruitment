@@ -3,19 +3,16 @@ package com.weatherforecast.service;
 import java.util.List;
 
 /**
- * Service to retrieve the cities for which
- * the forecasting service is available
- * 
- * @author rajanandpk
+ * Service to retrieve the cities for which the forecasting service is available
  *
  */
 public interface CoverageAvailableCitiesService {
 
-    /**
-     * Return the covered cities.
-     * 
-     * @return List of city names.
-     */
+	/**
+	 * Return the covered cities.
+	 * 
+	 * @return List of city names.
+	 */
 	List<String> getCoveredCities();
 
 }

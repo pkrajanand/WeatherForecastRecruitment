@@ -18,14 +18,14 @@ import com.weatherforecast.openweathermap.service.impl.WeatherForecastServiceImp
 import com.weatherforecast.service.WeatherProviderConfiguration;
 
 /**
- * @author rajanandpk
+ 
  *
  */
 public class WeatherForecastServiceImplTest {
-	
+
 	@InjectMocks
 	private WeatherForecastServiceImpl weatherForecastServiceImpl;
-	
+
 	@Mock
 	private WeatherProviderConfiguration weatherProviderConfiguration;
 
@@ -45,17 +45,17 @@ public class WeatherForecastServiceImplTest {
 	}
 
 	/**
-	 * Test method for {@link com.weatherforecast.openweathermap.service.impl.WeatherForecastServiceImpl#getWeatherResponse(java.lang.String)}.
+	 * Test method for
+	 * {@link com.weatherforecast.openweathermap.service.impl.WeatherForecastServiceImpl#getWeatherResponse(java.lang.String)}.
 	 */
 	@Test
 	public void testGetWeatherResponse() {
-		
+
 		when(weatherProviderConfiguration.getAppId()).thenReturn("23a6b6af62a314759f1df5a2c8ffe877");
 		when(weatherProviderConfiguration.getUnit()).thenReturn("Imperial");
 		when(weatherProviderConfiguration.getUrl()).thenReturn("http://api.openweathermap.org/data/2.5/weather");
-		
-		WeatherResponse weatherResponse = 
-				weatherForecastServiceImpl.getWeatherResponse("Sydney");
+
+		WeatherResponse weatherResponse = weatherForecastServiceImpl.getWeatherResponse("Sydney");
 		assertNotNull(weatherResponse);
 		assertNotNull(weatherResponse.getCity());
 		assertNotNull(weatherResponse.getTemperature());

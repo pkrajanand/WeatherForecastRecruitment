@@ -14,17 +14,19 @@ import com.weatherforecast.service.WeatherForecastService;
 @RequestMapping("/weather")
 public class WeatherAppFrontendController {
 
-    @Autowired
-    private WeatherForecastService weatherService;
+	@Autowired
+	private WeatherForecastService weatherService;
 
-    /**
-     * Get weather Info by city name.
-     * @param city city name as query parameter.
-     * @return {@linkplain WeatherResponse} for the city
-     */
-    @RequestMapping(method=RequestMethod.GET)
-    public @ResponseBody WeatherResponse getWeatherInfo(@RequestParam String city) {
-        return weatherService.getWeatherResponse(city);
-    }
+	/**
+	 * Get weather Info by city name.
+	 * 
+	 * @param city
+	 *            city name as query parameter.
+	 * @return {@linkplain WeatherResponse} for the city
+	 */
+	@RequestMapping(method = RequestMethod.GET)
+	public @ResponseBody WeatherResponse getWeatherInfo(@RequestParam String city) {
+		return weatherService.getWeatherResponse(city);
+	}
 
 }

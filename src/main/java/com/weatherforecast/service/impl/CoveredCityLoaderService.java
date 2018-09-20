@@ -10,51 +10,49 @@ import org.springframework.stereotype.Service;
 import com.weatherforecast.service.CoverageAvailableCitiesService;
 
 /**
- * Service to load the cities covered from the configuration
- * files
- * 
- * @author rajanandpk
+ * Service to load the cities covered from the configuration files
  *
  */
 @Service
 public class CoveredCityLoaderService implements CoverageAvailableCitiesService {
-    private static final String DELIMITER = "\\,";
+	private static final String DELIMITER = "\\,";
 
-    /**
-     * Injected city list configuration from externalized configuration file.
-     * City list should be '|' delimited string.
-     */
-    @Value("${weather.cities}")
-    private String cityListConfig;
+	/**
+	 * Injected city list configuration from externalized configuration file. City
+	 * list should be '|' delimited string.
+	 */
+	@Value("${weather.cities}")
+	private String cityListConfig;
 
-    /**
-     * Returns the configured city names
-     * 
-     * @return
-     */
-    public String getCityListConfig() {
+	/**
+	 * Returns the configured city names
+	 * 
+	 * @return
+	 */
+	public String getCityListConfig() {
 		return cityListConfig;
 	}
 
 	/**
-     * Set configured city list. Although this is auto injected generally.
-     * This method is still useful on unit testing.
-     * @param cityListConfig
-     */
-    void setCityListConfig(String cityListConfig) {
-        this.cityListConfig = cityListConfig;
-    }
-   
-    /**
-     * Get list of cities from configuration.
-     */
-    @Override
-    public List<String> getCoveredCities() {
-        if (cityListConfig == null) {
-            return Collections.emptyList();
-        }
+	 * Set configured city list. Although this is auto injected generally. This
+	 * method is still useful on unit testing.
+	 * 
+	 * @param cityListConfig
+	 */
+	void setCityListConfig(String cityListConfig) {
+		this.cityListConfig = cityListConfig;
+	}
 
-        return Arrays.asList(cityListConfig.split(DELIMITER));
-    }
+	/**
+	 * Get list of cities from configuration.
+	 */
+	@Override
+	public List<String> getCoveredCities() {
+		if (cityListConfig == null) {
+			return Collections.emptyList();
+		}
+
+		return Arrays.asList(cityListConfig.split(DELIMITER));
+	}
 
 }

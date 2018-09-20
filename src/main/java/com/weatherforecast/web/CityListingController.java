@@ -11,25 +11,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.weatherforecast.service.CoverageAvailableCitiesService;
 
 /**
- * 
- * @author rajanandpk
- *
+*
  */
 @Controller
 @RequestMapping("/cities")
 public class CityListingController {
 
-    @Autowired
-    private CoverageAvailableCitiesService cityListService;
+	@Autowired
+	private CoverageAvailableCitiesService cityListService;
 
-
-    /**
-     * 
-     * @return
-     */
-    @RequestMapping(method=RequestMethod.GET)
-    public @ResponseBody List<String> getWeatherInfo() {
-        return cityListService.getCoveredCities();
-    }
+	/**
+	 * 
+	 * @return
+	 */
+	@RequestMapping(method = RequestMethod.GET)
+	public @ResponseBody List<String> getWeatherInfo() {
+		return cityListService.getCoveredCities();
+	}
 
 }

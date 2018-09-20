@@ -23,7 +23,7 @@ public class WindTest {
 
 	@Test
 	public final void testGetSpeed() {
-		
+
 		Wind wind = new Wind(BigDecimal.valueOf(12.0), SpeedScale.KMH);
 		assertTrue("Speed set is not returned", BigDecimal.valueOf(12.0).equals(wind.getSpeed()));
 	}

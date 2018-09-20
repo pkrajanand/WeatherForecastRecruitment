@@ -14,13 +14,13 @@ import org.junit.Test;
 import com.weatherforecast.service.impl.CoveredCityLoaderService;
 
 /**
- * @author rajanandpk
+ 
  *
  */
 public class CoveredCityLoaderServiceTest {
 
 	private CoveredCityLoaderService coveredCityLoaderService = new CoveredCityLoaderService();
-	
+
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -36,12 +36,13 @@ public class CoveredCityLoaderServiceTest {
 	}
 
 	/**
-	 * Test method for {@link com.weatherforecast.service.impl.CoveredCityLoaderService#getCoveredCities()}.
+	 * Test method for
+	 * {@link com.weatherforecast.service.impl.CoveredCityLoaderService#getCoveredCities()}.
 	 */
 	@Test
 	public final void testGetCoveredCities() {
 		coveredCityLoaderService.setCityListConfig("Sydney,Melbourne");
-		
+
 		List<String> coveredCities = coveredCityLoaderService.getCoveredCities();
 		assertTrue(coveredCities.get(0).equals("Sydney"));
 		assertTrue(coveredCities.get(1).equals("Melbourne"));
