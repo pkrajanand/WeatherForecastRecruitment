@@ -5,11 +5,11 @@ This was a project done as needed by employment recruitment process in 2016. How
 
 Architecture Stack
 ------------------------------------
-* UI-Tier: HTML, AngularJS, CSS
-* Middle Tier: Spring Boot 1.3.2, Spring MVC 4, JDK 8
-* Test Automation: JUnit 4, Mockito
-* Build Tool : Maven
-* Deployment : Spring-Boot embedded Tomcat
+* Front-end: HTML, AngularJS, CSS
+* Back-end: Spring Boot 1.3.2, JDK 8
+* Dev Env Support: Spring-Boot embedded Tomcat 
+* Test Automation: JUnit 4, Mockito, Jacoco, Sonar, Docker
+* Build & Package : Maven
 * SCM : GitHub
 
 Development Environment
