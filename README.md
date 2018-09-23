@@ -8,7 +8,7 @@ Architecture Stack
 * Front-end: HTML, AngularJS, CSS
 * Back-end: Spring Boot 1.3.2, JDK 8
 * Dev Env Support: Spring-Boot embedded Tomcat 
-* Test Automation: JUnit 4, Mockito, Jacoco, Sonar, Docker
+* Test Automation: JUnit 4, Mockito, Jacoco, Sonar, Docker(from https://github.com/mechero/code-quality-game)
 * Build & Package : Maven
 * SCM : GitHub
 
