@@ -7,14 +7,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.weatherforecast.service.CoverageAvailableCitiesService;
+import com.weatherforecast.service.LocationService;
 
 /**
  * Service to load the cities covered from the configuration files
- *
  */
 @Service
-public class CoveredCityLoaderService implements CoverageAvailableCitiesService {
+public class FlatFileLocationService implements LocationService {
 	private static final String DELIMITER = "\\,";
 
 	/**
@@ -24,30 +23,17 @@ public class CoveredCityLoaderService implements CoverageAvailableCitiesService 
 	@Value("${weather.cities}")
 	private String cityListConfig;
 
-	/**
-	 * Returns the configured city names
-	 * 
-	 * @return
-	 */
-	public String getCityListConfig() {
-		return cityListConfig;
-	}
-
-	/**
-	 * Set configured city list. Although this is auto injected generally. This
-	 * method is still useful on unit testing.
-	 * 
-	 * @param cityListConfig
-	 */
-	void setCityListConfig(String cityListConfig) {
+	FlatFileLocationService () {}
+	
+	public FlatFileLocationService (String cityListConfig) {
 		this.cityListConfig = cityListConfig;
 	}
-
+	
 	/**
 	 * Get list of cities from configuration.
 	 */
 	@Override
-	public List<String> getCoveredCities() {
+	public List<String> getLocations() {
 		if (cityListConfig == null) {
 			return Collections.emptyList();
 		}
