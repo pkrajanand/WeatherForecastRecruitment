@@ -1,5 +1,6 @@
 package com.weatherforecast.service.impl;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
@@ -7,6 +8,8 @@ import java.util.List;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.weatherforecast.model.Location;
 
 public class FlatFileLocationServiceTest {
 
@@ -23,16 +26,16 @@ public class FlatFileLocationServiceTest {
 
 	@Test
 	public final void testGetLocations() {
-		List<String> locations = flatFileLocationService.getLocations();
-		assertTrue(locations.get(0).equals("Sydney"));
-		assertTrue(locations.get(1).equals("Melbourne"));
+		List<Location> locations = flatFileLocationService.getLocations();
+		assertEquals(new Location("Sydney"), locations.get(0));
+		assertEquals(new Location("Melbourne"), locations.get(1));
 	}
 	
 	@Test
 	public final void testGetLocationsWhenLocationsAreNotInitialized() {
 		flatFileLocationService = new FlatFileLocationService();
 		
-		List<String> locations = flatFileLocationService.getLocations();
+		List<Location> locations = flatFileLocationService.getLocations();
 		assertTrue(locations.size() == 0);
 	}
 

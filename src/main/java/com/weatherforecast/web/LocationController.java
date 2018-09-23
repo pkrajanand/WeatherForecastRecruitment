@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.weatherforecast.model.Location;
 import com.weatherforecast.service.LocationService;
 
 @Controller
@@ -20,7 +21,7 @@ public class LocationController {
 	private LocationService locationService;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody List<String> getCoveredCities() {
+	public @ResponseBody List<Location> getCoveredCities() {
 		return locationService.getLocations();
 	}
 }
