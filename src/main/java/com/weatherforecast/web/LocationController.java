@@ -4,14 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.weatherforecast.model.Location;
 import com.weatherforecast.service.LocationService;
 
-@Controller
+@RestController
 public class LocationController {
 
 	@Autowired
@@ -19,7 +18,7 @@ public class LocationController {
 	private LocationService locationService;
 
 	@GetMapping("/locations")
-	public @ResponseBody List<Location> getCoveredCities() {
+	public List<Location> getCoveredCities() {
 		return locationService.getLocations();
 	}
 }

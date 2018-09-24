@@ -1,15 +1,15 @@
 
 angular.module('weatherForecastingApp', [])
     .controller('cityLoaderController', ['$scope', '$http', function($scope, $http) {
-        $http.get("/cities").success(function(response) {
+        $http.get("/locations").success(function(response) {
             $scope.data = {
                 citySelect: null,
-                availableOptions: response
+                availableOptions: response.map(location => location.name)
             };
         });
         
     $scope.getWeather = function() {
-        $http.get("/weather?city=" + $scope.data.citySelect)
+        $http.get("/weather/" + $scope.data.citySelect)
         .success(function(response) {
                 $scope.weatherData = response;
         });
