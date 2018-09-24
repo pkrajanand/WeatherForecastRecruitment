@@ -1,38 +1,29 @@
 # Weather Forecaster (WeFor)
-This is a weather forecast reporting application for selected cities. More cities could be added in a configurable way.
+This is a light-weight weather reporting application for selected locations. More locations could be added in a configurable way. It makes use of API from OpenWeatherMap.
 
-This was a project done as needed by employment recruitment process in 2016. However, it was a good opportunity to pick up Spring Boot.
+This project is initially done as needed by employment recruitment process in 2016. Later on, I used this project to try out new concepts and technologies.
 
-Architecture Stack
+Technology Stack
 ------------------------------------
-* Front-end: HTML, AngularJS, CSS
-* Back-end: Spring Boot 1.3.2, JDK 8
-* Dev Env Support: Spring-Boot embedded Tomcat 
+* Front-end: HTML, AngularJS 1.3, CSS
+* Back-end: Spring Boot 2.0.5, JDK 8, Lombok
 * Test Automation: JUnit 4, Mockito, Jacoco, Sonar, Docker(from https://github.com/mechero/code-quality-game)
 * Build & Package : Maven
 * SCM : GitHub
-
-Development Environment
-------------------------------------
-* Mac OSX 10.11.3
-* STS 3.7.2
-* JDK 8
-* Visual Paradigm Community Edition UML Tool
+* Dev Env Support: Spring-Boot embedded Tomcat, STS 3.9.4, Mac OSX 10.13.6 
 
 System Requirement:
 ------------------------------------
 * JDK 1.8+  
 * MAVEN 3.3.9
-* Application tested on Mac OSX 10.11.3  
+* Lombok 
 
 Architectural Overview
 ------------------------------------
 
-The application follows three-tire architecture:
-
-* client side: HTML page and AngularJS-based JavaScript file
-* web tier: Restful controllers to collaborate between views and services
-* service tier: Spring annotated services for loading the covered cities and for fetching the weather data for the selected city
+* Front-end: HTML view backed with AngularJS-based JavaScript file
+* Back-end api: Spring-based restful controllers 
+* Back-end service: Spring annotated services for loading the covered cities and for fetching the weather data for the selected city
 
 Current implementation make use of a free service provided by Open Weather Map(http://openweathermap.org) for weather updates. But this could easily be replaced with another
 implementation since the respective services are designed in a loosely coupled fashion.
@@ -55,7 +46,7 @@ To run the tests
 mvn clean compile test
 ```
 
-To take the test coverage
+Test coverage
 ------------------------------------
 To instantiate a sonar instance
 
