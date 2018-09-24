@@ -1,6 +1,6 @@
 
 angular.module('weatherForecastingApp', [])
-    .controller('cityLoaderController', ['$scope', '$http', function($scope, $http) {
+    .controller('weatherForecastController', ['$scope', '$http', function($scope, $http) {
         $http.get("/locations").success(function(response) {
             $scope.data = {
                 citySelect: null,

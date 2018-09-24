@@ -10,7 +10,7 @@
 	<body>
 		<div class="page-header"><h3>Weather ForeCaster</h3></div>
 		<div ng-app="weatherForecastingApp">
-			<div ng-controller="cityLoaderController">
+			<div ng-controller="weatherForecastController">
 					<label for="citySelect"> Select City: </label>
 					<select name="citySelect" id="citySelect" ng-model="data.citySelect" ng-change="getWeather()">
 						<option ng-repeat="option in data.availableOptions" value="{{option}}">{{option}}</option>
