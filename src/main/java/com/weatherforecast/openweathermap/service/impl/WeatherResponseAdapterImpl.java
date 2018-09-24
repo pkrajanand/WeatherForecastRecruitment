@@ -6,7 +6,7 @@ import com.weatherforecast.model.Temperature;
 import com.weatherforecast.model.WeatherResponse;
 import com.weatherforecast.model.Wind;
 import com.weatherforecast.openweathermap.model.WeatherResponseContainerModel;
-import com.weatherforecast.service.adapter.WeatherResponseAdapter;
+import com.weatherforecast.service.WeatherResponseAdapter;
 
 /**
  * Adapter implementation to transform the open-weather-map weather response

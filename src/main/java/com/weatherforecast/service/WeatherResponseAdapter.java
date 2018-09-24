@@ -1,4 +1,4 @@
-package com.weatherforecast.service.adapter;
+package com.weatherforecast.service;
 
 import com.weatherforecast.model.WeatherResponse;;
 
