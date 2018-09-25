@@ -7,22 +7,21 @@ System Requirement:
 ------------------------------------
 * JDK 1.8+  
 * MAVEN 3.5.4
+* NodeJS 8
 
 Running application:
 ------------------------------------
-```
-mvn spring-boot:run
-```
+Backend: ```mvn spring-boot:run```
+Frontend: ```cd /front-end; node server.js```
 
 Accessing application:
 ------------------------------------
-```
-http://localhost:8080/
-```
+backend: ```http://localhost:8080/```
+frontend: ```http://localhost:4000/```
 
 Technology Stack
 ------------------------------------
-* Front-end: HTML, AngularJS 1.3, CSS
+* Front-end: HTML, AngularJS 1.3, CSS, NodeJs Express
 * Back-end: Spring Boot 2.0.5, JDK 8, Lombok
 * SCM : GitHub
 * Test Automation: JUnit 4, Mockito, Jacoco, Sonar, Docker(from https://github.com/mechero/code-quality-game)
@@ -36,7 +35,7 @@ implementation since the respective services are designed in a loosely coupled f
 
 Application is built using Spring-Boot. 
 
-* Front-end: HTML view backed with AngularJS-based JavaScript file
+* Front-end: HTML view backed with AngularJS-based JavaScript file. Exposed over a different endpoint to backend. 
 * Back-end API: Spring-based restful controllers 
 * Back-end service: Spring annotated services to fetch weather update for the covered locations.
 
