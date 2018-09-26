@@ -11,8 +11,16 @@ System Requirement:
 
 Running application:
 ------------------------------------
-* Backend: ```mvn spring-boot:run```
-* Frontend: ```./start_frontend.sh```
+* Backend: 
+
+> ```
+> cd backend
+> mvn spring-boot:run
+> ```
+ 
+* Frontend: 
+
+> ```./start_frontend.sh```
 
 Accessing application:
 ------------------------------------
@@ -40,9 +48,10 @@ Application is built using Spring-Boot.
 * Back-end API: Spring-based restful controllers 
 * Back-end service: Spring annotated services to fetch weather update for the covered locations.
 
-Running tests
+Running backend tests
 ------------------------------------
 ```
+cd backend
 mvn clean compile test
 ```
 
@@ -51,11 +60,13 @@ Taking Test coverage
 Instantiate a sonar instance
 
 ```
+cd backend
 docker-compose -f docker-compose-sonar.yml up
 ```
 To send test results to sonar instance
 
 ```
+cd backend
 mvn sonar:sonar
 ```
 To view the test coverage
@@ -66,7 +77,10 @@ http://localhost:9000/dashboard?id=com.recruitment%3Aweatherforecast
 
 To Build WAR :
 ------------------------------------
+```
+cd backend
 mvn package
+```
 
 Configuration Options
 -------------------------
