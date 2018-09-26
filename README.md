@@ -36,9 +36,9 @@ gradle clean test
 * Instantiate a sonar instance
 
 >> ```
-cd backend
-docker-compose -f docker-compose-sonar.yml up
-```
+>> cd backend
+>> docker-compose -f docker-compose-sonar.yml up
+>> ```
 
 * To send test results to sonar instance
 
