@@ -19,3 +19,4 @@ front-end/node_modules
 .project
 backend/.mvn
 backend/.settings
+frontend/node_modules
