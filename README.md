@@ -7,17 +7,17 @@ System Requirement:
 ------------------------------------
 * JDK 1.8+  
 * MAVEN 3.5.4
-* NodeJS 8
+* Docker
 
 Running application:
 ------------------------------------
 * Backend: ```mvn spring-boot:run```
-* Frontend: ```cd /front-end; node server.js```
+* Frontend: ```./start_frontend.sh```
 
 Accessing application:
 ------------------------------------
 * Backend: ```http://localhost:8080/```
-* frontend: ```http://localhost:4000/```
+* frontend: ```http://localhost:44000/```
 
 Technology Stack
 ------------------------------------
@@ -27,6 +27,7 @@ Technology Stack
 * Test Automation: JUnit 4, Mockito, Jacoco, Sonar, Docker(from https://github.com/mechero/code-quality-game)
 * Build & Package : Maven
 * Dev Env Support: Spring-Boot embedded Tomcat, STS 3.9.4, Mac OSX 10.13.6 
+* Containerization: Docker
 
 Architectural Overview
 ------------------------------------

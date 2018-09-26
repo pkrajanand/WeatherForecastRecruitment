@@ -1,0 +1,8 @@
+version: "2"
+
+services:
+  weather_ui:
+    image: pkrajanand/weatherui:1.0
+    ports:
+      - '44000:4000'
+    build: .
