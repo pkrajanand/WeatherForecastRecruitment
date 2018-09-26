@@ -11,13 +11,13 @@ System Requirement:
 
 Running application:
 ------------------------------------
-Backend: ```mvn spring-boot:run```
-Frontend: ```cd /front-end; node server.js```
+* Backend: ```mvn spring-boot:run```
+* Frontend: ```cd /front-end; node server.js```
 
 Accessing application:
 ------------------------------------
-backend: ```http://localhost:8080/```
-frontend: ```http://localhost:4000/```
+* Backend: ```http://localhost:8080/```
+* frontend: ```http://localhost:4000/```
 
 Technology Stack
 ------------------------------------
