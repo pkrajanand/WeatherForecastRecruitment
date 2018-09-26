@@ -34,6 +34,7 @@ gradle clean test
 
 ### Taking Backend Test coverage
 * Instantiate a sonar instance
+
 >> ```
 cd backend
 docker-compose -f docker-compose-sonar.yml up
