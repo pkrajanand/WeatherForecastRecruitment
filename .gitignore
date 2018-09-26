@@ -20,3 +20,6 @@ front-end/node_modules
 backend/.mvn
 backend/.settings
 frontend/node_modules
+backend/.gradle
+backend/bin
+backend/build
