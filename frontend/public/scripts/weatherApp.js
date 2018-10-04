@@ -15,8 +15,7 @@ app.controller('weatherForecastController', ['$scope', '$http', 'config', functi
     });
     
 	$scope.getWeather = function() {
-	    $http.get(config.protocol+"://"+config.host+":"+config.port+"/weather/" + $scope.data.citySelect)
-	    .success(function(response) {
+	    $http.get(config.protocol+"://"+config.host+":"+config.port+"/weather/" + $scope.data.citySelect).success(function(response) {
 	            $scope.weatherData = response;
 	    });
 	}
