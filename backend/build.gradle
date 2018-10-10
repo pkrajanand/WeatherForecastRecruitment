@@ -11,14 +11,27 @@ buildscript {
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
         classpath "net.ltgt.gradle:gradle-apt-plugin:0.18"
+        classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5")
     }
 }
- 
+
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'net.ltgt.apt'
-
+apply plugin: "jacoco"
+apply plugin: 'org.sonarqube'
+jacoco {
+	toolVersion = "0.7.9"
+	reportsDir = file("$buildDir/customJacocoReportDir")
+}
+jacocoTestReport {
+	reports {
+		xml.enabled false
+		csv.enabled false
+		html.destination file("${buildDir}/jacocoHtml")
+	}
+}
 group = 'com.recruitment'
 version = '0.1.0'
 
