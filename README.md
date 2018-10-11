@@ -7,7 +7,7 @@ This project is initiated while participating in an employment recruitment proce
 
 ### System Requirement:
 * JDK 1.8+  
-* Gradle 4.0
+* Gradle 4.1
 * Docker
 
 ### Launching application:
@@ -42,17 +42,11 @@ gradle clean test
 
 * To send test results to sonar instance
 
-> Need to fix the issues: 
->> (1) Gradle upgrade broke dockerization for Sonar Server #17
->> 
->> (2) Find Gradle plugin for Sonar integration #18
- 
+ ```gradle sonarqube```
+
 * To view the test coverage
 
-> Need to fix the issues: 
->> (1) Gradle upgrade broke dockerization for Sonar Server #17
->> 
->> (2) Find Gradle plugin for Sonar integration #18
+```http://localhost:9000/dashboard?id=com.recruitment%3Aweatherforecast```
 
 ### Technology Stack
 * Front-end: HTML, AngularJS 1.3, CSS, NodeJs Express
